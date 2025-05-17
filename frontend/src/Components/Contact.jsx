@@ -42,7 +42,7 @@ const Contact = ({contact,setContact , emailAddress}) => {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium">Message</label>
+            <label className="block text-sm font-medium text-black">Message</label>
             <textarea
               {...register('message', { required: true })}
               className="w-full border border-gray-300 p-2 rounded"
@@ -52,7 +52,7 @@ const Contact = ({contact,setContact , emailAddress}) => {
           </div>
           <button
             type="submit"
-            className="w-full bg-blue-600 text-black p-2 rounded hover:bg-blue-700 transition"
+            className="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700 transition"
           >
             Contact Seller
           </button>
