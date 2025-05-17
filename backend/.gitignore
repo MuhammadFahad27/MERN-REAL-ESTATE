@@ -1,0 +1,23 @@
+# Node modules folder
+node_modules/
+
+# Environment variables file
+.env
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build folders (agar use karte ho)
+dist/
+build/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor folders
+.vscode/
+.idea/
