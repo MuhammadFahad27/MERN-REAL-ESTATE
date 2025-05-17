@@ -79,7 +79,7 @@ const getUserListing = async (req,res,next)=>{
     }
     try {
 
-        const listing = await Listing.find().populate('user','username email').sort({createdAt:-1})
+        const listing = await Listing.find({user:id}).populate('user','username email').sort({createdAt:-1})
 
         return res.status(200).json({
 
