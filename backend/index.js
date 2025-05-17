@@ -4,12 +4,17 @@ const mongoose = require('mongoose') ;
 const env = require('dotenv').config({})
 const cors = require('cors')
 const cookieParser = require("cookie-parser") ;
+app.use(cors({
+    origin:process.env.FRONTEND_URL,
+    credentials:true
+}))
 mongoose.connect(process.env.MONGO_DB_URL, {
     connectTimeoutMS: 30000, // 30 seconds
     socketTimeoutMS: 45000, // 45 seconds
 })
 .then(() => console.log("MongoDB Connected!"))
 .catch(err => console.error("MongoDB Connection Error:", err));
+
 
 const authRoutes = require('./Routes/auth.route')
 const userRoutes = require('./Routes/user.route')
@@ -18,10 +23,6 @@ const listingRoutes = require('./Routes/listing.route')
 
 
 app.use(cookieParser())
-app.use(cors({
-    origin:process.env.FRONTEND_URL,
-    credentials:true
-}))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true })); 
 

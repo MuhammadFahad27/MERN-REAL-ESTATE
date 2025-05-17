@@ -47,7 +47,7 @@ const App = () => {
        
       } catch (error) { 
 
-          toast.error('some thing went wrong')
+          console.log(error)
 
        
       }
