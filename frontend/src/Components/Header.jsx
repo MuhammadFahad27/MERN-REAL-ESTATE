@@ -61,6 +61,7 @@ const Header = () => {
                   
                   dispatch(signOutUser())
                   toast.success(data.message)
+                  setSearchTerm('')
                   navigate('/sign-in')
                  
                   return ;
