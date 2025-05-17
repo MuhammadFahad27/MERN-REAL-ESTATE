@@ -52,16 +52,16 @@ const Header = () => {
   const handleLogOut = async ()=>{
   
             try {
-                 
+
                 const response = await axios.get(import.meta.env.VITE_API_URL+`/auth/sign-out`,{withCredentials:true})
         
                 const data = await response.data ;
         
                 if(data.success){
                   
+                  setSearchTerm('') 
                   dispatch(signOutUser())
                   toast.success(data.message)
-                  setSearchTerm('') 
                   navigate('/sign-in')
                  
                   return ;
