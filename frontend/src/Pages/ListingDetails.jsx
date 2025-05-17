@@ -145,7 +145,7 @@ const ListingDetails = () => {
               {listing.offer ? (
                 <>
                   <span className="text-red-500 line-through mr-2">${listing.regularPrice}{listing.type === 'rent' ? '/month' : ''}</span>
-                  <span className="text-2xl font-bold text-green-400">${listing.discountPrice}{listing.type === 'rent' ? '/month' : ''}</span>
+                  <span className="text-xl font-bold text-green-400">${listing.discountPrice}{listing.type === 'rent' ? '/month' : ''}</span>
                   <span className="block text-sm text-gray-500">Discounted Price</span>
                 </>
               ) : (
