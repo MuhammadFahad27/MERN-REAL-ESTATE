@@ -136,7 +136,7 @@ const ListingDetails = () => {
 
     {/* Right Column - Price and Contact */}
     <div className="md:col-span-1">
-      <div className="bg-gray-800 rounded-lg shadow-md p-6 sticky top-4">
+      <div className="bg-gray-800 rounded-lg shadow-md p-6 xl:p-8 sticky top-4">
         <div className="mb-4">
           <h2 className="text-xl font-semibold text-white mb-2">Price Details</h2>
           <div className="flex items-center">
