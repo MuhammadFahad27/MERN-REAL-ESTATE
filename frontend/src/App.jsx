@@ -1,4 +1,4 @@
-// import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {BrowserRouter,Navigate,Route,Routes ,useNavigate} from "react-router-dom"
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -16,10 +16,10 @@ import Listing from './Pages/Listing';
 import UserListing from './Pages/UserListing';
 import ListingDetails from './Pages/ListingDetails';
 import Search from './Pages/Search';
-// import axios from 'axios'
+import axios from 'axios'
 import {useDispatch} from 'react-redux'
-// import {toast} from 'react-toastify'
-// import { signOutUser } from './Redux Toolkit/User/userSlice';
+import {toast} from 'react-toastify'
+import { signOutUser } from './Redux Toolkit/User/userSlice';
 
 
 
@@ -27,33 +27,33 @@ const App = () => {
 
    
  
-    // const dispatch = useDispatch() ;
+    const dispatch = useDispatch() ;
     const navigate = useNavigate()
     
 
    
-  // useEffect(() => {
-  //   const checkAuth = async()=>{
+  useEffect(() => {
+    const checkAuth = async()=>{
 
-  //     try {
+      try {
 
-  //       const response = await axios.get(import.meta.env.VITE_API_URL+'/auth/check',{withCredentials:true}) ;
+        const response = await axios.get(import.meta.env.VITE_API_URL+'/auth/check',{withCredentials:true}) ;
 
-  //       if(!response?.data?.isAuthenticated){
-  //         dispatch(signOutUser()) ;
-  //         navigate('/sign-in')
-  //       }
+        if(!response?.data?.isAuthenticated){
+          dispatch(signOutUser()) ;
+          navigate('/sign-in')
+        }
         
        
-  //     } catch (error) { 
+      } catch (error) { 
 
-  //         console.log(error)
+          console.log(error)
 
        
-  //     }
-  //   }
-  //   checkAuth() ;
-  // }, [])
+      }
+    }
+    checkAuth() ;
+  }, [])
 
 
   
@@ -63,9 +63,9 @@ const App = () => {
     <Header />
     <Routes>
 
-      <Route path='/home' element={<Home/>}/>
-      <Route path='/' element={<Signin/>}/>
+      <Route path='/' element={<Home/>}/>
       <Route path='/sign-up' element={<Signup/>}/>
+      <Route path='/sign-in' element={<Signin/>}/>
       <Route path='/about' element={<About/>}/>
       <Route path='/list-details/:listId' element={<ListingDetails/>}/>
       <Route path='/search' element={<Search/>}/>

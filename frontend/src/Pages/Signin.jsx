@@ -45,7 +45,7 @@ const Signin = () => {
       
                 toast.success(data.message) 
                 dispatch(signUpSuccess(data.user))
-                navigate('/home')
+                navigate('/')
               }
             
           } catch (error) {
