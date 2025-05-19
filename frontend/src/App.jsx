@@ -20,6 +20,7 @@ import axios from 'axios'
 import {useDispatch} from 'react-redux'
 import {toast} from 'react-toastify'
 import { signOutUser } from './Redux Toolkit/User/userSlice';
+import Spinner from './Components/Spinner';
 
 
 
@@ -28,18 +29,21 @@ const App = () => {
    
  
     const dispatch = useDispatch() ;
-    const navigate = useNavigate()
+    const navigate = useNavigate() ;
+    const [loading , setLoading] = useState(false) ;
     
 
    
-  useEffect(() => {
-    const checkAuth = async()=>{
+    useEffect(() => {
+      const checkAuth = async()=>{
 
       try {
 
+        setLoading(true)
         const response = await axios.get(import.meta.env.VITE_API_URL+'/auth/check',{withCredentials:true}) ;
 
         if(!response?.data?.isAuthenticated){
+          setLoading(false)
           dispatch(signOutUser()) ;
           navigate('/sign-in')
         }
@@ -48,14 +52,21 @@ const App = () => {
       } catch (error) { 
 
           console.log(error)
-
+          setLoading(false)
        
+      }
+      finally{
+
+        setLoading(false)
+
       }
     }
     checkAuth() ;
   }, [])
 
-
+  if (loading) {
+    return <Spinner/>
+  }
   
 
   
