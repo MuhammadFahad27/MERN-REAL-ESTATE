@@ -43,9 +43,9 @@ const App = () => {
         const response = await axios.get(import.meta.env.VITE_API_URL+'/auth/check',{withCredentials:true}) ;
 
         if(!response?.data?.isAuthenticated){
-          // setLoading(false)
-          dispatch(signOutUser()) ;
           navigate('/sign-in')
+          dispatch(signOutUser()) ;
+          setLoading(false)
         }
         
        
