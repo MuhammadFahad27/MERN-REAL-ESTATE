@@ -67,9 +67,8 @@ const App = () => {
   if (loading) {
     return <Spinner/>
   }
-  
-
-  
+  else{
+    
   return <>
     <Header />
     <Routes>
@@ -107,6 +106,10 @@ const App = () => {
       hideProgressBar={false} 
     />
     </>
+  }
+  
+
+  
    
    
 }
