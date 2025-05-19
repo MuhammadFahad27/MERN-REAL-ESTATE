@@ -18,9 +18,9 @@ import ListingDetails from './Pages/ListingDetails';
 import Search from './Pages/Search';
 import axios from 'axios'
 import {useDispatch} from 'react-redux'
-import {toast} from 'react-toastify'
+// import {toast} from 'react-toastify'
 import { signOutUser } from './Redux Toolkit/User/userSlice';
-import Spinner from './Components/Spinner';
+// import Spinner from './Components/Spinner';
 
 
 
@@ -30,7 +30,7 @@ const App = () => {
  
     const dispatch = useDispatch() ;
     const navigate = useNavigate() ;
-    const [loading , setLoading] = useState(false) ;
+    // const [loading , setLoading] = useState(false) ;
     
 
    
@@ -39,35 +39,29 @@ const App = () => {
 
       try {
 
-        setLoading(true)
+        // setLoading(true)
         const response = await axios.get(import.meta.env.VITE_API_URL+'/auth/check',{withCredentials:true}) ;
 
         if(!response?.data?.isAuthenticated){
           navigate('/sign-in')
           dispatch(signOutUser()) ;
-          setLoading(false)
+          
         }
         
        
       } catch (error) { 
 
           console.log(error)
-          setLoading(false)
+         
        
       }
-      finally{
-
-        setLoading(false)
-
-      }
+      
     }
     checkAuth() ;
   }, [])
 
-  if (loading) {
-    return <Spinner/>
-  }
-  else{
+  
+  
     
   return <>
     <Header />
@@ -112,6 +106,6 @@ const App = () => {
   
    
    
-}
+
 
 export default App
