@@ -138,7 +138,7 @@ const Home = () => {
     </div>
 
     {/* Rent Section */}
-    <div className="px-4 mt-10">
+    <div className="px-4 mt-12">
       <h2 className="text-xl font-bold mb-4 flex items-center gap-2 text-gray-100">
         <FaHome className="text-blue-400" /> Recent Places for Rent
       </h2>
