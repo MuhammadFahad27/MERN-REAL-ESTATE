@@ -172,10 +172,10 @@ const Search = () => {
         <div>
           <label className="block text-gray-200 font-semibold mb-1">Sort</label>
           <select
-            className="w-full border border-gray-700 bg-gray-600 text-gray-100 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 shadow-sm"
+            className="w-full border border-gray-700 bg-gray-800 text-gray-100 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 shadow-sm"
             {...register("sort")} defaultValue={""}
           >
-            <option  disabled className='text-white' hidden>Sort Properties ....</option>
+            <option  disabled className='text-white' >-- Sorting --</option>
             <option value="regularPrice_desc">Price: High to Low</option>
             <option value="regularPrice_asc">Price: Low to High</option>
             <option value="desc">Latest Listing</option>
