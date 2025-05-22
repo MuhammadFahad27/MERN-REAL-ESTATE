@@ -14,7 +14,7 @@ const ListingDetails = () => {
     const [loading, setLoading] = useState(false);
     const [contact , setContact] = useState(false)
 
-    const id = useSelector((state)=>state.user.User._id) ;
+    const id = useSelector((state)=>state?.user?.User?._id) ;
 
     useEffect(() => {
         const getListing = async () => {
