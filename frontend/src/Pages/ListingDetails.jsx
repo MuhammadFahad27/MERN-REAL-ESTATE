@@ -195,7 +195,7 @@ const ListingDetails = () => {
     </div>
   </div>
 
-  {contact && <Contact contact={contact} setContact={setContact} emailAddress={listing.user.email} />}
+  {contact && <Contact contact={contact} setContact={setContact} emailAddress={listing?.user?.email} />}
 </main>
 
     )
