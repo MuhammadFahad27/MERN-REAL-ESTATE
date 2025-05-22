@@ -95,7 +95,7 @@ const Header = () => {
       <FiMenu />
     </button>
 
-    <Link to={'/home'}>
+    <Link to={'/'}>
       <h1 className="hidden md:block text-xl font-bold text-gray-100">
         MERN <span className="text-blue-500">ESTATE</span>
       </h1>
