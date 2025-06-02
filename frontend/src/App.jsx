@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {BrowserRouter,Navigate,Route,Routes ,useNavigate} from "react-router-dom"
+import {BrowserRouter,Navigate,Route,Routes ,useLocation,useNavigate} from "react-router-dom"
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -31,7 +31,11 @@ const App = () => {
     const dispatch = useDispatch() ;
     const navigate = useNavigate() ;
     // const [loading , setLoading] = useState(false) ;
-    
+     const location = useLocation() ;
+  
+  const SignIn_SignUp  =  ['/sign-in' , '/sign-up']
+  const visible = SignIn_SignUp.includes(location.pathname) ;
+ 
 
    
     useEffect(() => {
@@ -64,7 +68,8 @@ const App = () => {
   
     
   return <>
-    <Header />
+
+    {!visible && <Header/> }
     <Routes>
 
       <Route path='/' element={<Home/>}/>
@@ -92,7 +97,7 @@ const App = () => {
 
     
     </Routes>
-    <Footer/>
+     {!visible  &&  <Footer/> }
     <ToastContainer 
       position="top-right" 
       autoClose={3000} 

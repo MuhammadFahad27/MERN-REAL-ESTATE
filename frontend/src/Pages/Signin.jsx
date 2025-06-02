@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form';
 import { Link ,useNavigate } from 'react-router-dom';
 import axios from "axios"
@@ -8,19 +8,30 @@ import Spinner from '../Components/Spinner';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { signInFailure ,signUpStart ,signUpSuccess } from '../Redux Toolkit/User/userSlice';
+import { Navigate } from 'react-router-dom';
 
 
 const Signin = () => {
 
+   
     const {
       register,
       handleSubmit,
       formState: { errors },
     } = useForm();
 
-    
-    const dispatch = useDispatch() ;
+     const { isLoggedIn  } = useSelector(state => state.user);
+
+     
+
+
+
+
+   
     const navigate = useNavigate();
+
+  
+    const dispatch = useDispatch() ;
     const {loading} = useSelector((state)=>state?.user)
   
     const onSubmit = async(formData) => {
@@ -60,6 +71,10 @@ const Signin = () => {
          
 
     };
+
+     if (isLoggedIn ) {
+        return <Navigate to={'/'}/>
+      }aa
   
  return (
   <div className="min-h-screen flex items-center justify-center bg-slate-950 p-4">
