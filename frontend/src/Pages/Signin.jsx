@@ -74,7 +74,7 @@ const Signin = () => {
 
      if (isLoggedIn ) {
         return <Navigate to={'/'}/>
-      }aa
+      }
   
  return (
   <div className="min-h-screen flex items-center justify-center bg-slate-950 p-4">
