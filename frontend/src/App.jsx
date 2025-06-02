@@ -62,7 +62,7 @@ const App = () => {
       
     }
     checkAuth() ;
-  }, [])
+  }, [dispatch])
 
   
   
