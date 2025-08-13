@@ -59,7 +59,7 @@ const signUp = async (req,res,next)=>{
         
     } catch (error) {
         
-        next(handleError(500,'Server Error'))
+        next(handleError(500,error?.message))
     }
 
 
